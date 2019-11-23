@@ -1,16 +1,28 @@
-# osg8_t3
+# Bismillah
+# Flutter Basic Apps ( Tugas 3 - OSG08 )
+Aplikasi Flutter dengan tema Hari Olahraga Nasional untuk tugas ke-3 kelas OSG08.
 
-A new Flutter project.
+## Screenshoot
+![](img/Screenshoot.png).
 
-## Getting Started
+## Built With
+- [Flutter](https://flutter.dev)
 
-This project is a starting point for a Flutter application.
+## Created By
+- Arista Wahyu Saputra
 
-A few resources to get you started if this is your first Flutter project:
+## OSG08 - Flutter Basic
+Dengan jangka waktu lebih kurang 2 bulan, peserta diharapkan dapat mengenal dan membuat aplikasi simple Flutter dengan menggunakan data dari internet (API).
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Cara Mendaftar Online Study Group OSG08
+Untuk pendaftaran kelas selanjutnya, silahkan kunjungi atau hubungi kami di dawah ini.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Info Lebih Lengkap
+Website : [www.eudeka.id](https://www.eudeka.id).  
+Twitter: [@EudekaID](https://twitter.com/EudekaID).  
+Telegram : [@eudekainfo](https://t.me/eudekainfo).  
+Instagram : [@eudeka.id](https://instagram.com/eudeka.id).  
+WhatsApp : [0895351577557](https://wa.me/62895351577557).  
+Email : [info@eudeka.id](mailto:info@eudeka.id).  
+
+###### tags: `Samples` `Eudeka` `OSG08`
