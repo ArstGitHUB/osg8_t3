@@ -66,33 +66,64 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: new CircleBorder(),
                     color: Colors.white,
                     
-                    child:  Image.network('https://miro.medium.com/max/313/1*D5afxg0H9xyxfqRq_bfTgQ.png'),
+                    child:  FlutterLogo()//Image.network('https://miro.medium.com/max/313/1*D5afxg0H9xyxfqRq_bfTgQ.png'),
                   ),
                 ),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-
-        ),
-      ),
+      body: new Padding(
+        padding: const EdgeInsets.only(top: 12.0),
+        child: GridView(
+         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+           crossAxisCount: 3,
+         ),
+         children: <Widget>[
+           GridTile(
+             child: const _ImageTemplate(Colors.green, 'https://miro.medium.com/max/313/1*D5afxg0H9xyxfqRq_bfTgQ.png'),
+           ),
+           GridTile(
+              child: FlutterLogo(),
+           ),
+           GridTile(
+              child: FlutterLogo(),
+           )
+         ],
+       ),
+      )
       
     );
   }
 }
+
+class _ImageTemplate extends StatelessWidget {
+  const _ImageTemplate(this.backgroundColor, this.gridImage);
+  final Color backgroundColor;
+  final gridImage;
+  @override
+  Widget build(BuildContext context) {
+    return new Card(
+      color: backgroundColor,
+      child: new InkWell(
+        onTap: () {},
+        child: new Center(
+          child: new Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: new Image.network(gridImage),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+List<Widget> _tiles = const <Widget>[
+  const _ImageTemplate(Colors.green, Icons.widgets),
+  const _ImageTemplate(Colors.lightBlue, Icons.wifi),
+  const _ImageTemplate(Colors.amber, Icons.panorama_wide_angle),
+  const _ImageTemplate(Colors.brown, Icons.map),
+  const _ImageTemplate(Colors.deepOrange, Icons.send),
+  const _ImageTemplate(Colors.indigo, Icons.airline_seat_flat),
+  const _ImageTemplate(Colors.red, Icons.bluetooth),
+  const _ImageTemplate(Colors.pink, Icons.battery_alert),
+  const _ImageTemplate(Colors.purple, Icons.desktop_windows),
+  const _ImageTemplate(Colors.blue, Icons.radio),
+];
