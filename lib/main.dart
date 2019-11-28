@@ -103,7 +103,7 @@ class _ImageTemplate extends StatelessWidget {
     return new Card(
       color: backgroundColor,
       child: new InkWell(
-        onTap: () {},
+        onDoubleTap: () {},
         child: new Center(
           child: new Padding(
             padding: const EdgeInsets.all(4.0),
