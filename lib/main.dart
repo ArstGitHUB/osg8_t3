@@ -70,21 +70,32 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
       ),
+    
       body: new Padding(
         padding: const EdgeInsets.only(top: 12.0),
+        
         child: GridView(
          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
            crossAxisCount: 3,
          ),
          children: <Widget>[
            GridTile(
-             child: const _ImageTemplate(Colors.green, 'https://miro.medium.com/max/313/1*D5afxg0H9xyxfqRq_bfTgQ.png'),
+             child: const _ImageTemplate(Colors.tealAccent, 'https://img.lovepik.com/element/40030/3770.png_1200.png'),
            ),
            GridTile(
-              child: FlutterLogo(),
+              child: const _ImageTemplate(Colors.blueAccent, 'https://i-love-png.com/images/football-players-vector-download-football-athlete-football-png-and-vector-football-player-png-650_458_24109.png'),
            ),
            GridTile(
-              child: FlutterLogo(),
+              child: const _ImageTemplate(Colors.amberAccent, 'https://i.dlpng.com/static/png/1708797-swimming-man-clipart-png-images-swimming-png-pictures-400_210_preview.png'),
+           ),
+           GridTile(
+              child: const _ImageTemplate(Colors.amberAccent, 'https://pngimage.net/wp-content/uploads/2018/06/talkshow-png-2.png'),
+           ),
+           GridTile(
+              child: const _ImageTemplate(Colors.redAccent, 'https://pngimage.net/wp-content/uploads/2018/06/talkshow-png-2.png'),
+           ),
+           GridTile(
+              child: const _ImageTemplate(Colors.deepPurpleAccent, 'https://pngimage.net/wp-content/uploads/2018/06/talkshow-png-2.png'),
            )
          ],
        ),
@@ -103,11 +114,18 @@ class _ImageTemplate extends StatelessWidget {
     return new Card(
       color: backgroundColor,
       child: new InkWell(
-        onDoubleTap: () {},
+        onDoubleTap: () {
+          Navigator.push(context, 
+          MaterialPageRoute(builder: (BuildContext context)
+          {
+            return SecondPage();
+          })
+          );
+        },
         child: new Center(
           child: new Padding(
             padding: const EdgeInsets.all(4.0),
-            child: new Image.network(gridImage),
+            child: new Image.network(gridImage, height: 500, width: 500,),
           ),
         ),
       ),
@@ -115,15 +133,21 @@ class _ImageTemplate extends StatelessWidget {
   }
 }
 
-List<Widget> _tiles = const <Widget>[
-  const _ImageTemplate(Colors.green, Icons.widgets),
-  const _ImageTemplate(Colors.lightBlue, Icons.wifi),
-  const _ImageTemplate(Colors.amber, Icons.panorama_wide_angle),
-  const _ImageTemplate(Colors.brown, Icons.map),
-  const _ImageTemplate(Colors.deepOrange, Icons.send),
-  const _ImageTemplate(Colors.indigo, Icons.airline_seat_flat),
-  const _ImageTemplate(Colors.red, Icons.bluetooth),
-  const _ImageTemplate(Colors.pink, Icons.battery_alert),
-  const _ImageTemplate(Colors.purple, Icons.desktop_windows),
-  const _ImageTemplate(Colors.blue, Icons.radio),
-];
+class SecondPage extends StatelessWidget{
+  @override 
+  Widget build (BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Halaman Kedua"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text("Kembali"),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
